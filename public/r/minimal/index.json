@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "homepage": "https://ui.abdrhmniqbal.my.id",
+  "name": "dasar-ui",
+  "items": [
+    {
+      "name": "button",
+      "title": "Button",
+      "description": "Buttons allow users to perform actions and choose with a single tap.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
