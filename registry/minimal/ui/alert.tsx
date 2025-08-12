@@ -10,7 +10,7 @@ const alertVariants = tv({
     variant: {
       default: 'bg-card text-card-foreground',
       destructive:
-        'text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90',
+        'text-destructive bg-card [&>svg]:text-current *:data-[part=description]:text-destructive/90',
     },
   },
   defaultVariants: {
@@ -25,7 +25,8 @@ function Alert({
 }: React.ComponentProps<typeof ark.div> & VariantProps<typeof alertVariants>) {
   return (
     <ark.div
-      data-slot="alert"
+      data-scope="alert"
+      data-part="root"
       role="alert"
       className={cn(alertVariants({ variant }), className)}
       {...props}
@@ -39,9 +40,9 @@ function AlertTitle({
 }: React.ComponentProps<typeof ark.h5>) {
   return (
     <ark.h5
-      data-slot="alert-title"
+      data-part="title"
       className={cn(
-        'col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight',
+        'col-start-2 line-clamp-1 min-h-4 font-medium text-base tracking-tight',
         className
       )}
       {...props}
@@ -55,7 +56,7 @@ function AlertDescription({
 }: React.ComponentProps<typeof ark.div>) {
   return (
     <ark.div
-      data-slot="alert-description"
+      data-part="description"
       className={cn(
         'text-muted-foreground col-start-2 grid justify-items-start gap-1 text-sm [&_p]:leading-relaxed',
         className
@@ -64,5 +65,8 @@ function AlertDescription({
     />
   )
 }
+
+Alert.Title = AlertTitle
+Alert.Description = AlertDescription
 
 export { Alert, AlertTitle, AlertDescription }

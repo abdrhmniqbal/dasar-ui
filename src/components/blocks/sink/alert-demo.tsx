@@ -1,8 +1,4 @@
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from '@/registry/minimal/ui/alert'
+import { Alert } from '@/registry/minimal/ui/alert'
 import { Button } from '@/registry/minimal/ui/button'
 import {
   IconBookmarkFilled,
@@ -18,82 +14,82 @@ export function AlertDemo() {
     <div className="grid max-w-xl items-start gap-4">
       <Alert>
         <IconCircleCheck />
-        <AlertTitle>Success! Your changes have been saved</AlertTitle>
-        <AlertDescription>
+        <Alert.Title>Success! Your changes have been saved</Alert.Title>
+        <Alert.Description>
           This is an alert with icon, title and description.
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
       <Alert>
         <IconBookmarkFilled />
-        <AlertDescription>
+        <Alert.Description>
           This one has an icon and a description only. No title.
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
       <Alert>
-        <AlertDescription>
+        <Alert.Description>
           This one has a description only. No title. No icon.
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
       <Alert>
         <IconHeart />
-        <AlertTitle>Let&apos;s try one with icon and title.</AlertTitle>
+        <Alert.Title>Let&apos;s try one with icon and title.</Alert.Title>
       </Alert>
       <Alert>
         <IconShieldExclamation />
-        <AlertTitle>
+        <Alert.Title>
           This is a very long alert title that demonstrates how the component
           handles extended text content and potentially wraps across multiple
           lines
-        </AlertTitle>
+        </Alert.Title>
       </Alert>
       <Alert>
         <IconGift />
-        <AlertDescription>
+        <Alert.Description>
           This is a very long alert description that demonstrates how the
           component handles extended text content and potentially wraps across
           multiple lines
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
       <Alert>
         <IconExclamationCircle />
-        <AlertTitle>
+        <Alert.Title>
           This is an extremely long alert title that spans multiple lines to
           demonstrate how the component handles very lengthy headings while
           maintaining readability and proper text wrapping behavior
-        </AlertTitle>
-        <AlertDescription>
+        </Alert.Title>
+        <Alert.Description>
           This is an equally long description that contains detailed information
           about the alert. It shows how the component can accommodate extensive
           content while preserving proper spacing, alignment, and readability
           across different screen sizes and viewport widths. This helps ensure
           the user experience remains consistent regardless of the content
           length.
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
       <Alert variant="destructive">
         <IconExclamationCircle />
-        <AlertTitle>Something went wrong!</AlertTitle>
-        <AlertDescription>
+        <Alert.Title>Something went wrong!</Alert.Title>
+        <Alert.Description>
           Your session has expired. Please log in again.
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
       <Alert variant="destructive">
         <IconExclamationCircle />
-        <AlertTitle>Unable to process your payment.</AlertTitle>
-        <AlertDescription>
+        <Alert.Title>Unable to process your payment.</Alert.Title>
+        <Alert.Description>
           <p>Please verify your billing information and try again.</p>
           <ul className="list-inside list-disc text-sm">
             <li>Check your card details</li>
             <li>Ensure sufficient funds</li>
             <li>Verify billing address</li>
           </ul>
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
       <Alert>
         <IconCircleCheck />
-        <AlertTitle className="max-w-[calc(100%-4rem)] overflow-ellipsis">
+        <Alert.Title className="max-w-[calc(100%-4rem)] overflow-ellipsis">
           The selected emails have been marked as spam.
-        </AlertTitle>
+        </Alert.Title>
         <Button
           size="sm"
           variant="outline"
@@ -104,10 +100,10 @@ export function AlertDemo() {
       </Alert>
       <Alert className="border-amber-50 bg-amber-50 text-amber-900 dark:border-amber-950 dark:bg-amber-950 dark:text-amber-100">
         <IconCircleCheck />
-        <AlertTitle>Plot Twist: This Alert is Actually Amber!</AlertTitle>
-        <AlertDescription>
+        <Alert.Title>Plot Twist: This Alert is Actually Amber!</Alert.Title>
+        <Alert.Description>
           This one has custom colors for light and dark mode.
-        </AlertDescription>
+        </Alert.Description>
       </Alert>
     </div>
   )
