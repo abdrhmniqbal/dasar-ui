@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/registry/minimal/ui/accordion'
+import { Accordion } from '@/registry/minimal/ui/accordion'
 
 export function AccordionDemo() {
   return (
@@ -12,38 +7,38 @@ export function AccordionDemo() {
         collapsible
         className="w-full"
       >
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
-          <AccordionContent>
+        <Accordion.Item value="item-1">
+          <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+          <Accordion.Content>
             Yes. It adheres to the WAI-ARIA design pattern.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger>Is it styled?</AccordionTrigger>
-          <AccordionContent>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-2">
+          <Accordion.Trigger>Is it styled?</Accordion.Trigger>
+          <Accordion.Content>
             Yes. It comes with default styles that matches the other
             components&apos; aesthetic.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-3">
-          <AccordionTrigger>Is it animated?</AccordionTrigger>
-          <AccordionContent>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-3">
+          <Accordion.Trigger>Is it animated?</Accordion.Trigger>
+          <Accordion.Content>
             Yes. It&apos;s animated by default, but you can disable it if you
             prefer.
-          </AccordionContent>
-        </AccordionItem>
+          </Accordion.Content>
+        </Accordion.Item>
       </Accordion>
       <Accordion
         collapsible
         className="w-full"
         multiple
       >
-        <AccordionItem value="item-1">
-          <AccordionTrigger>
+        <Accordion.Item value="item-1">
+          <Accordion.Trigger>
             What are the key considerations when implementing a comprehensive
             enterprise-level authentication system?
-          </AccordionTrigger>
-          <AccordionContent>
+          </Accordion.Trigger>
+          <Accordion.Content>
             Implementing a robust enterprise authentication system requires
             careful consideration of multiple factors. This includes secure
             password hashing and storage, multi-factor authentication (MFA)
@@ -53,14 +48,14 @@ export function AccordionDemo() {
             you&apos;ll need to consider scalability, performance impact, and
             compliance with relevant data protection regulations such as GDPR or
             HIPAA.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-2">
+          <Accordion.Trigger>
             How does modern distributed system architecture handle eventual
             consistency and data synchronization across multiple regions?
-          </AccordionTrigger>
-          <AccordionContent>
+          </Accordion.Trigger>
+          <Accordion.Content>
             Modern distributed systems employ various strategies to maintain
             data consistency across regions. This often involves using
             techniques like CRDT (Conflict-Free Replicated Data Types), vector
@@ -71,8 +66,8 @@ export function AccordionDemo() {
             demonstrate different approaches to solving these challenges,
             balancing between consistency, availability, and partition tolerance
             as described in the CAP theorem.
-          </AccordionContent>
-        </AccordionItem>
+          </Accordion.Content>
+        </Accordion.Item>
       </Accordion>
     </div>
   )
