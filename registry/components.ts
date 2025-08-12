@@ -39,6 +39,18 @@ const ui: Registry = [
       },
     ],
   },
+  {
+    name: 'spinner',
+    title: 'Spinner',
+    description: 'An animated loading spinner.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/spinner.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
 ]
 
 const example: Registry = [
