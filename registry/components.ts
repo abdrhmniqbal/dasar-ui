@@ -2,6 +2,19 @@ import { Registry } from './schema'
 
 const ui: Registry = [
   {
+    name: 'accordion',
+    title: 'Accordion',
+    description:
+      'A collapsible component that displays content in a vertical stack',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/accordion.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
     name: 'button',
     title: 'Button',
     description: 'An interactive element used to trigger actions.',
