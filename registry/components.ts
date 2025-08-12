@@ -13,6 +13,19 @@ const ui: Registry = [
       },
     ],
   },
+  {
+    name: 'alert',
+    title: 'Alert',
+    description:
+      'A component that displays a brief, important message to the user.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/alert.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
 ]
 
 const example: Registry = [
