@@ -43,11 +43,12 @@ export function Spinner({
       {...props}
     >
       <IconLoader2
+        data-part="icon"
         className={cn(
           spinnerVariants({
             size,
           }),
-          'animate-spin',
+          'animate-spin rounded-full',
           className
         )}
       />
