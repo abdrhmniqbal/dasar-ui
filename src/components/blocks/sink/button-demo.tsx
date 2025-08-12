@@ -1,27 +1,65 @@
 import { Button } from '@/registry/minimal/ui/button'
-import { IconArrowRight, IconLoader2, IconSend } from '@tabler/icons-react'
+import { IconArrowRight, IconHeart, IconSend } from '@tabler/icons-react'
 
 export function ButtonDemo() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
-        <Button>Button</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="destructive">Destructive</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="link">Link</Button>
-        <Button variant="outline">
+        <Button size="xs">Extra Small</Button>
+        <Button
+          variant="outline"
+          size="xs"
+        >
+          Outline
+        </Button>
+        <Button
+          variant="ghost"
+          size="xs"
+        >
+          Ghost
+        </Button>
+        <Button
+          variant="destructive"
+          size="xs"
+        >
+          Destructive
+        </Button>
+        <Button
+          variant="secondary"
+          size="xs"
+        >
+          Secondary
+        </Button>
+        <Button
+          variant="link"
+          size="xs"
+        >
+          Link
+        </Button>
+        <Button
+          variant="outline"
+          size="xs"
+        >
           <IconSend /> Send
         </Button>
-        <Button variant="outline">
+        <Button
+          variant="outline"
+          size="xs"
+        >
           Learn More <IconArrowRight />
         </Button>
         <Button
-          disabled
+          size="xs"
           variant="outline"
+          iconOnly
         >
-          <IconLoader2 className="animate-spin" />
+          <IconHeart />
+        </Button>
+        <Button
+          size="xs"
+          variant="outline"
+          loading
+        >
           Please wait
         </Button>
       </div>
@@ -70,11 +108,45 @@ export function ButtonDemo() {
           Learn More <IconArrowRight />
         </Button>
         <Button
+          size="sm"
+          variant="outline"
+          iconOnly
+        >
+          <IconHeart />
+        </Button>
+        <Button
           disabled
           size="sm"
           variant="outline"
+          loading
         >
-          <IconLoader2 className="animate-spin" />
+          Please wait
+        </Button>
+      </div>
+      <div className="flex flex-wrap items-center gap-2 md:flex-row">
+        <Button>Medium</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="link">Link</Button>
+        <Button variant="outline">
+          <IconSend /> Send
+        </Button>
+        <Button variant="outline">
+          Learn More <IconArrowRight />
+        </Button>
+        <Button
+          variant="outline"
+          iconOnly
+        >
+          <IconHeart />
+        </Button>
+        <Button
+          disabled
+          variant="outline"
+          loading
+        >
           Please wait
         </Button>
       </div>
@@ -123,11 +195,78 @@ export function ButtonDemo() {
           Learn More <IconArrowRight />
         </Button>
         <Button
+          size="lg"
+          variant="outline"
+          iconOnly
+        >
+          <IconHeart />
+        </Button>
+        <Button
           disabled
           size="lg"
           variant="outline"
+          loading
         >
-          <IconLoader2 className="animate-spin" />
+          Please wait
+        </Button>
+      </div>
+      <div className="flex flex-wrap items-center gap-2 md:flex-row">
+        <Button size="xl">Extra Large</Button>
+        <Button
+          variant="outline"
+          size="xl"
+        >
+          Outline
+        </Button>
+        <Button
+          variant="ghost"
+          size="xl"
+        >
+          Ghost
+        </Button>
+        <Button
+          variant="destructive"
+          size="xl"
+        >
+          Destructive
+        </Button>
+        <Button
+          variant="secondary"
+          size="xl"
+        >
+          Secondary
+        </Button>
+        <Button
+          variant="link"
+          size="xl"
+        >
+          Link
+        </Button>
+        <Button
+          variant="outline"
+          size="xl"
+        >
+          <IconSend /> Send
+        </Button>
+        <Button
+          variant="outline"
+          size="xl"
+        >
+          Learn More <IconArrowRight />
+        </Button>
+        <Button
+          size="xl"
+          variant="outline"
+          iconOnly
+        >
+          <IconHeart />
+        </Button>
+        <Button
+          disabled
+          size="xl"
+          variant="outline"
+          loading
+        >
           Please wait
         </Button>
       </div>
