@@ -40,6 +40,18 @@ const ui: Registry = [
     ],
   },
   {
+    name: 'aspect-ratio',
+    title: 'Aspect Ratio',
+    description: 'Displays content within a desired ratio.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/aspect-ratio.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
     name: 'spinner',
     title: 'Spinner',
     description: 'An animated loading spinner.',

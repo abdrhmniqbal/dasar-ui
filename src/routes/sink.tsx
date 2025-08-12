@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { AccordionDemo } from '@/components/blocks/sink/accordion-demo'
 import { AlertDemo } from '@/components/blocks/sink/alert-demo'
+import { AspectRatioDemo } from '@/components/blocks/sink/aspect-ratio-demo'
 import { ButtonDemo } from '@/components/blocks/sink/button-demo'
 import { ComponentWrapper } from '@/components/blocks/sink/component-wrapper'
 import { SpinnerDemo } from '@/components/blocks/sink/spinner-demo'
@@ -18,6 +19,9 @@ function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="Alert">
         <AlertDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Aspect Ratio">
+        <AspectRatioDemo />
       </ComponentWrapper>
       <ComponentWrapper name="Button">
         <ButtonDemo />
