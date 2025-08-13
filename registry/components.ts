@@ -40,6 +40,19 @@ const ui: Registry = [
     ],
   },
   {
+    name: 'avatar',
+    title: 'Avatar',
+    description:
+      'A graphical representation of the user, often used in profile sections.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/avatar.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
     name: 'button',
     title: 'Button',
     description: 'An interactive element used to trigger actions.',
