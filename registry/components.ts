@@ -78,6 +78,19 @@ const ui: Registry = [
     ],
   },
   {
+    name: 'input',
+    title: 'Input',
+    description:
+      'A field that allows user input, often used for forms or search functionality.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/input.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
     name: 'spinner',
     title: 'Spinner',
     description: 'An animated loading spinner.',
