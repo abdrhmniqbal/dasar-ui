@@ -11,6 +11,7 @@ import { CheckboxDemo } from '@/components/blocks/sink/checkbox-demo'
 import { ComponentWrapper } from '@/components/blocks/sink/component-wrapper'
 import { InputDemo } from '@/components/blocks/sink/input-demo'
 import { LabelDemo } from '@/components/blocks/sink/label-demo'
+import { RadioGroupDemo } from '@/components/blocks/sink/radio-group-demo'
 import { SpinnerDemo } from '@/components/blocks/sink/spinner-demo'
 
 export const Route = createFileRoute('/sink')({
@@ -49,6 +50,9 @@ function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="Label">
         <LabelDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Radio Group">
+        <RadioGroupDemo />
       </ComponentWrapper>
       <ComponentWrapper name="Spinner">
         <SpinnerDemo />
