@@ -53,6 +53,19 @@ const ui: Registry = [
     ],
   },
   {
+    name: 'badge',
+    title: 'Badge',
+    description:
+      'A small count and labeling component used to highlight a status.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/badge.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
     name: 'button',
     title: 'Button',
     description: 'An interactive element used to trigger actions.',

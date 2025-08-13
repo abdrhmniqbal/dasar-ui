@@ -4,6 +4,7 @@ import { AccordionDemo } from '@/components/blocks/sink/accordion-demo'
 import { AlertDemo } from '@/components/blocks/sink/alert-demo'
 import { AspectRatioDemo } from '@/components/blocks/sink/aspect-ratio-demo'
 import { AvatarDemo } from '@/components/blocks/sink/avatar-demo'
+import { BadgeDemo } from '@/components/blocks/sink/badge-demo'
 import { ButtonDemo } from '@/components/blocks/sink/button-demo'
 import { CardDemo } from '@/components/blocks/sink/card-demo'
 import { ComponentWrapper } from '@/components/blocks/sink/component-wrapper'
@@ -29,6 +30,9 @@ function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="Avatar">
         <AvatarDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Badge">
+        <BadgeDemo />
       </ComponentWrapper>
       <ComponentWrapper name="Button">
         <ButtonDemo />
