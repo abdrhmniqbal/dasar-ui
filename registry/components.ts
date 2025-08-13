@@ -15,18 +15,6 @@ const ui: Registry = [
     ],
   },
   {
-    name: 'button',
-    title: 'Button',
-    description: 'An interactive element used to trigger actions.',
-    type: 'registry:ui',
-    files: [
-      {
-        path: 'ui/button.tsx',
-        type: 'registry:ui',
-      },
-    ],
-  },
-  {
     name: 'alert',
     title: 'Alert',
     description:
@@ -47,6 +35,31 @@ const ui: Registry = [
     files: [
       {
         path: 'ui/aspect-ratio.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
+    name: 'button',
+    title: 'Button',
+    description: 'An interactive element used to trigger actions.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/button.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
+    name: 'card',
+    title: 'Card',
+    description:
+      'A container component that displays content in a compact and organized way.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/card.tsx',
         type: 'registry:ui',
       },
     ],
