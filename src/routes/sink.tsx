@@ -7,6 +7,7 @@ import { AvatarDemo } from '@/components/blocks/sink/avatar-demo'
 import { BadgeDemo } from '@/components/blocks/sink/badge-demo'
 import { ButtonDemo } from '@/components/blocks/sink/button-demo'
 import { CardDemo } from '@/components/blocks/sink/card-demo'
+import { CheckboxDemo } from '@/components/blocks/sink/checkbox-demo'
 import { ComponentWrapper } from '@/components/blocks/sink/component-wrapper'
 import { InputDemo } from '@/components/blocks/sink/input-demo'
 import { LabelDemo } from '@/components/blocks/sink/label-demo'
@@ -39,6 +40,9 @@ function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="Card">
         <CardDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Checkbox">
+        <CheckboxDemo />
       </ComponentWrapper>
       <ComponentWrapper name="Input">
         <InputDemo />

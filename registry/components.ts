@@ -91,6 +91,19 @@ const ui: Registry = [
     ],
   },
   {
+    name: 'checkbox',
+    title: 'Checkbox',
+    description:
+      'A control component that allows for multiple selections within a set.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/checkbox.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
     name: 'input',
     title: 'Input',
     description:
