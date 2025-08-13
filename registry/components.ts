@@ -91,6 +91,19 @@ const ui: Registry = [
     ],
   },
   {
+    name: 'label',
+    title: 'Label',
+    description:
+      'A text component that provides information about another component.',
+    type: 'registry:ui',
+    files: [
+      {
+        path: 'ui/label.tsx',
+        type: 'registry:ui',
+      },
+    ],
+  },
+  {
     name: 'spinner',
     title: 'Spinner',
     description: 'An animated loading spinner.',

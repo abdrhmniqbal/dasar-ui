@@ -8,6 +8,7 @@ import { ButtonDemo } from '@/components/blocks/sink/button-demo'
 import { CardDemo } from '@/components/blocks/sink/card-demo'
 import { ComponentWrapper } from '@/components/blocks/sink/component-wrapper'
 import { InputDemo } from '@/components/blocks/sink/input-demo'
+import { LabelDemo } from '@/components/blocks/sink/label-demo'
 import { SpinnerDemo } from '@/components/blocks/sink/spinner-demo'
 
 export const Route = createFileRoute('/sink')({
@@ -37,6 +38,9 @@ function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="Input">
         <InputDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Label">
+        <LabelDemo />
       </ComponentWrapper>
       <ComponentWrapper name="Spinner">
         <SpinnerDemo />
