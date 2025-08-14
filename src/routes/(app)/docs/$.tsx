@@ -7,13 +7,14 @@ import {
 import { findNeighbour } from 'fumadocs-core/server'
 
 import { seo } from '@/lib/seo'
-import { getPageBySlug, mdxLoader, source, tocLoader } from '@/lib/source'
+import { getPageBySlug, getSource, mdxLoader, tocLoader } from '@/lib/source'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { DocsCopyPage } from '@/components/blocks/docs-copy-page'
 
 export const Route = createFileRoute('/(app)/docs/$')({
   loader: async ({ params }) => {
+    const source = await getSource()
     const data = await getPageBySlug({ data: params._splat?.split('/') ?? [] })
     const neighbours = findNeighbour(source.pageTree, data.data.url)
     await tocLoader.preload(data.path)

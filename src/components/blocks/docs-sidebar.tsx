@@ -2,7 +2,7 @@
 
 import { Link, useLocation } from '@tanstack/react-router'
 
-import type { source } from '@/lib/source'
+import type { SourceType } from '@/lib/source'
 import {
   Sidebar,
   SidebarContent,
@@ -17,7 +17,7 @@ import {
 export function DocsSidebar({
   tree,
   ...props
-}: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
+}: React.ComponentProps<typeof Sidebar> & { tree: SourceType['pageTree'] }) {
   const { pathname } = useLocation()
 
   return (

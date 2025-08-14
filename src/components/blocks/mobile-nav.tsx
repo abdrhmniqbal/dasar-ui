@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { Link, useNavigate, type LinkProps } from '@tanstack/react-router'
 
-import { source } from '@/lib/source'
+import { type SourceType } from '@/lib/source'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
@@ -17,7 +17,7 @@ export function MobileNav({
   items,
   className,
 }: {
-  tree: typeof source.pageTree
+  tree: SourceType['pageTree']
   items: { href: string; label: string }[]
   className?: string
 }) {

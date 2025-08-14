@@ -7,16 +7,23 @@ import { create, docs } from 'source-generated'
 import { DocsTableOfContents } from '@/components/blocks/docs-toc'
 import { mdxComponents } from '@/components/mdx-components'
 
-export const source = loader({
-  baseUrl: '/docs',
-  source: await create.sourceAsync(docs.doc, docs.meta),
-})
+export let sourcePromise = create.sourceAsync(docs.doc, docs.meta)
+
+export type SourceType = Awaited<ReturnType<typeof getSource>>
+
+export async function getSource() {
+  return loader({
+    baseUrl: '/docs',
+    source: await sourcePromise,
+  })
+}
 
 export const getPageBySlug = createServerFn({
   method: 'GET',
 })
   .validator((slugs: string[]) => slugs)
   .handler(async ({ data: slugs }) => {
+    const source = await getSource()
     const page = source.getPage(slugs)
     if (!page || !page.data) throw notFound()
     return {

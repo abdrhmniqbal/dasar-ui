@@ -9,7 +9,7 @@ import { type DialogProps } from '@radix-ui/react-dialog'
 import { IconArrowRight } from '@tabler/icons-react'
 import { CornerDownLeftIcon, SquareDashedIcon } from 'lucide-react'
 
-import { source } from '@/lib/source'
+import type { SourceType } from '@/lib/source'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
@@ -37,7 +37,7 @@ export function CommandMenu({
   navItems,
   ...props
 }: DialogProps & {
-  tree: typeof source.pageTree
+  tree: SourceType['pageTree']
   blocks?: { name: string; description: string; categories: string[] }[]
   navItems?: { href: string; label: string }[]
 }) {

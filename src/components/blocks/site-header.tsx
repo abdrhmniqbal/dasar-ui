@@ -3,7 +3,7 @@
 import { Link } from '@tanstack/react-router'
 
 import { siteConfig } from '@/lib/config'
-import { source } from '@/lib/source'
+import { getSource } from '@/lib/source'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { CommandMenu } from '@/components/blocks/command-menu'
@@ -18,7 +18,8 @@ interface SiteHeaderProps {
   stargazers_count: number
 }
 
-export function SiteHeader({ stargazers_count }: SiteHeaderProps) {
+export async function SiteHeader({ stargazers_count }: SiteHeaderProps) {
+  const source = await getSource()
   const pageTree = source.pageTree
 
   return (
