@@ -27,3 +27,21 @@ export function splitByChar(input: string, separator: string): string[] {
 export function absoluteUrl(path: string) {
   return `${import.meta.env.VITE_PUBLIC_APP_URL}${path}`
 }
+
+export function normalizePath(path: string): string {
+  return path === '/' ? path : path.replace(/\/+$/, '')
+}
+
+export function shouldRedirect(
+  currentPath: string,
+  targets: string | string[]
+): boolean {
+  const list = Array.isArray(targets) ? targets : [targets]
+
+  const normalizedCurrent = normalizePath(currentPath)
+  return list.some((t) => {
+    const normalizedTarget = normalizePath(t)
+    // match either exact or with/without trailing slash
+    return normalizedCurrent === normalizedTarget
+  })
+}
