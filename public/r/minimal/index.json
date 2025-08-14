@@ -4,13 +4,133 @@
   "name": "dasar-ui",
   "items": [
     {
+      "name": "accordion",
+      "title": "Accordion",
+      "description": "A collapsible component that displays content in a vertical stack",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "title": "Alert",
+      "description": "A component that displays a brief, important message to the user.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "title": "Aspect Ratio",
+      "description": "Displays content within a desired ratio.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "title": "Avatar",
+      "description": "A graphical representation of the user, often used in profile sections.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "title": "Badge",
+      "description": "A small count and labeling component used to highlight a status.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "button",
       "title": "Button",
-      "description": "Buttons allow users to perform actions and choose with a single tap.",
+      "description": "An interactive element used to trigger actions.",
       "type": "registry:ui",
       "files": [
         {
           "path": "registry/minimal/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "title": "Card",
+      "description": "A container component that displays content in a compact and organized way.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "title": "Checkbox",
+      "description": "A control component that allows for multiple selections within a set.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "title": "Input",
+      "description": "A field that allows user input, often used for forms or search functionality.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "title": "Label",
+      "description": "A text component that provides information about another component.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "title": "Spinner",
+      "description": "An animated loading spinner.",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/minimal/ui/spinner.tsx",
           "type": "registry:ui"
         }
       ]

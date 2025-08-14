@@ -10,6 +10,7 @@
       "type": "registry:style",
       "dependencies": [
         "tw-animate-css",
+        "tailwind-variants",
         "@ark-ui/react",
         "@tabler/icons-react"
       ],

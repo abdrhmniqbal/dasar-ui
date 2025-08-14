@@ -10,42 +10,72 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SinkRouteImport } from './routes/sink'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as appRouteRouteImport } from './routes/(app)/route'
+import { Route as appIndexRouteImport } from './routes/(app)/index'
+import { Route as appDocsRouteRouteImport } from './routes/(app)/docs/route'
+import { Route as appDocsSplatRouteImport } from './routes/(app)/docs/$'
 
 const SinkRoute = SinkRouteImport.update({
   id: '/sink',
   path: '/sink',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
+const appRouteRoute = appRouteRouteImport.update({
+  id: '/(app)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const appIndexRoute = appIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => appRouteRoute,
+} as any)
+const appDocsRouteRoute = appDocsRouteRouteImport.update({
+  id: '/docs',
+  path: '/docs',
+  getParentRoute: () => appRouteRoute,
+} as any)
+const appDocsSplatRoute = appDocsSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => appDocsRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof appIndexRoute
   '/sink': typeof SinkRoute
+  '/docs': typeof appDocsRouteRouteWithChildren
+  '/docs/$': typeof appDocsSplatRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
   '/sink': typeof SinkRoute
+  '/docs': typeof appDocsRouteRouteWithChildren
+  '/': typeof appIndexRoute
+  '/docs/$': typeof appDocsSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/(app)': typeof appRouteRouteWithChildren
   '/sink': typeof SinkRoute
+  '/(app)/docs': typeof appDocsRouteRouteWithChildren
+  '/(app)/': typeof appIndexRoute
+  '/(app)/docs/$': typeof appDocsSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sink'
+  fullPaths: '/' | '/sink' | '/docs' | '/docs/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sink'
-  id: '__root__' | '/' | '/sink'
+  to: '/sink' | '/docs' | '/' | '/docs/$'
+  id:
+    | '__root__'
+    | '/(app)'
+    | '/sink'
+    | '/(app)/docs'
+    | '/(app)/'
+    | '/(app)/docs/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  appRouteRoute: typeof appRouteRouteWithChildren
   SinkRoute: typeof SinkRoute
 }
 
@@ -58,18 +88,65 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SinkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
+    '/(app)': {
+      id: '/(app)'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof appRouteRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/(app)/': {
+      id: '/(app)/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof appIndexRouteImport
+      parentRoute: typeof appRouteRoute
+    }
+    '/(app)/docs': {
+      id: '/(app)/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof appDocsRouteRouteImport
+      parentRoute: typeof appRouteRoute
+    }
+    '/(app)/docs/$': {
+      id: '/(app)/docs/$'
+      path: '/$'
+      fullPath: '/docs/$'
+      preLoaderRoute: typeof appDocsSplatRouteImport
+      parentRoute: typeof appDocsRouteRoute
     }
   }
 }
 
+interface appDocsRouteRouteChildren {
+  appDocsSplatRoute: typeof appDocsSplatRoute
+}
+
+const appDocsRouteRouteChildren: appDocsRouteRouteChildren = {
+  appDocsSplatRoute: appDocsSplatRoute,
+}
+
+const appDocsRouteRouteWithChildren = appDocsRouteRoute._addFileChildren(
+  appDocsRouteRouteChildren,
+)
+
+interface appRouteRouteChildren {
+  appDocsRouteRoute: typeof appDocsRouteRouteWithChildren
+  appIndexRoute: typeof appIndexRoute
+}
+
+const appRouteRouteChildren: appRouteRouteChildren = {
+  appDocsRouteRoute: appDocsRouteRouteWithChildren,
+  appIndexRoute: appIndexRoute,
+}
+
+const appRouteRouteWithChildren = appRouteRoute._addFileChildren(
+  appRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  appRouteRoute: appRouteRouteWithChildren,
   SinkRoute: SinkRoute,
 }
 export const routeTree = rootRouteImport

@@ -19,3 +19,11 @@ export function isElementWithAttr<
     (value === undefined || node.props[attr] === value)
   )
 }
+
+export function splitByChar(input: string, separator: string): string[] {
+  return input.split(separator).filter(Boolean)
+}
+
+export function absoluteUrl(path: string) {
+  return `${import.meta.env.VITE_PUBLIC_APP_URL}${path}`
+}

@@ -156,30 +156,6 @@ const example: Registry = [
       },
     ],
   },
-  {
-    name: 'button-press-example',
-    title: 'Button Press Example',
-    description: '',
-    type: 'registry:example',
-    files: [
-      {
-        path: 'example/button-press-example.tsx',
-        type: 'registry:example',
-      },
-    ],
-  },
-  {
-    name: 'button-variant-example',
-    title: 'Button Variant Example',
-    description: '',
-    type: 'registry:example',
-    files: [
-      {
-        path: 'example/button-variant-example.tsx',
-        type: 'registry:example',
-      },
-    ],
-  },
 ]
 
 export const registry: Registry = [...ui, ...example]

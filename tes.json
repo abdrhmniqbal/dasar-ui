@@ -1,0 +1,11 @@
+{
+  "contents": [
+    {
+      "heading": "pick-your-framework",
+      "content": "Start by selecting your framework of choice. Then follow the instructions to install the dependencies and structure your app. shadcn/ui is built to work with all React frameworks."
+    }
+  ],
+  "headings": [
+    { "id": "pick-your-framework", "content": "Pick Your Framework" }
+  ]
+}

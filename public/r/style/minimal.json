@@ -6,6 +6,7 @@
   "description": "Minimalist style for Dasar UI",
   "dependencies": [
     "tw-animate-css",
+    "tailwind-variants",
     "@ark-ui/react",
     "@tabler/icons-react"
   ],

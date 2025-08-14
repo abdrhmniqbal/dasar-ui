@@ -23,7 +23,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-			"@/registry/*": ["./registry/*"],
+      "@/registry/*": ["./registry/*"],
+      "source-generated": ["./source.generated.ts"]
     }
   }
 }

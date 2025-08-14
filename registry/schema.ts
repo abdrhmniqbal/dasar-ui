@@ -1,4 +1,5 @@
-import { z } from "zod"
+// @ts-nocheck
+import { z } from 'zod'
 
 export const registryItemSchema = z.object({
   $schema: z.string().optional(),
@@ -6,16 +7,16 @@ export const registryItemSchema = z.object({
   title: z.string(),
   description: z.string(),
   type: z.enum([
-    "registry:block",
-    "registry:component",
-    "registry:lib",
-    "registry:hook",
-    "registry:ui",
-    "registry:page",
-    "registry:file",
-    "registry:style",
-    "registry:theme",
-    "registry:example",
+    'registry:block',
+    'registry:component',
+    'registry:lib',
+    'registry:hook',
+    'registry:ui',
+    'registry:page',
+    'registry:file',
+    'registry:style',
+    'registry:theme',
+    'registry:example',
   ]),
   author: z.string().optional(),
   dependencies: z.array(z.string()).optional(),

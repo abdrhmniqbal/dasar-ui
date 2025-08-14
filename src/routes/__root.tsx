@@ -1,7 +1,14 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import {
+  HeadContent,
+  Outlet,
+  Scripts,
+  createRootRoute,
+} from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { LayoutProvider } from '@/hooks/use-layout'
 
-
+import { getThemeServerFn } from '@/lib/theme'
+import { ThemeProvider, useTheme } from '@/components/theme-provider'
 import appCss from '@/styles/globals.css?url'
 
 export const Route = createRootRoute({
@@ -25,17 +32,35 @@ export const Route = createRootRoute({
       },
     ],
   }),
-
-  shellComponent: RootDocument,
+  loader: () => getThemeServerFn(),
+  shellComponent: RootComponent,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent() {
+  const theme = Route.useLoaderData()
   return (
-    <html lang="en">
+    <ThemeProvider theme={theme}>
+      <LayoutProvider>
+        <RootDocument>
+          <Outlet />
+        </RootDocument>
+      </LayoutProvider>
+    </ThemeProvider>
+  )
+}
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  const { theme } = useTheme()
+  return (
+    <html
+      lang="en"
+      className={theme}
+      suppressHydrationWarning
+    >
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="text-foreground group/body overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]">
         {children}
         <TanStackRouterDevtools />
         <Scripts />

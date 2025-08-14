@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "An animated loading spinner.",
+  "files": [
+    {
+      "path": "registry/minimal/ui/spinner.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\r\nimport { IconLoader2 } from '@tabler/icons-react'\r\nimport { tv, type VariantProps } from 'tailwind-variants'\r\n\r\nimport { cn } from '@/lib/utils'\r\n\r\nconst spinnerVariants = tv({\r\n  variants: {\r\n    size: {\r\n      xs: 'size-3',\r\n      sm: 'size-4',\r\n      md: 'size-6',\r\n      lg: 'size-8',\r\n      xl: 'size-12',\r\n    },\r\n  },\r\n  defaultVariants: {\r\n    size: 'md',\r\n  },\r\n})\r\n\r\nexport interface SpinnerProps\r\n  extends React.ComponentProps<typeof ark.div>,\r\n    VariantProps<typeof spinnerVariants> {\r\n  /**\r\n   * For accessibility, it is important to add a fallback loading text.\r\n   * This text will be visible to screen readers.\r\n   * @default \"Loading...\"\r\n   */\r\n  label?: string\r\n}\r\n\r\nexport function Spinner({\r\n  size,\r\n  className,\r\n  label = 'Loading...',\r\n  ...props\r\n}: SpinnerProps) {\r\n  return (\r\n    <ark.div\r\n      data-scope=\"spinner\"\r\n      className=\"inline-block\"\r\n      {...props}\r\n    >\r\n      <IconLoader2\r\n        data-part=\"icon\"\r\n        className={cn(\r\n          spinnerVariants({\r\n            size,\r\n          }),\r\n          'animate-spin rounded-full',\r\n          className\r\n        )}\r\n      />\r\n      {label && <span className=\"sr-only\">{label}</span>}\r\n    </ark.div>\r\n  )\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}
