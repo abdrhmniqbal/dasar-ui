@@ -56,7 +56,7 @@ interface StarsCountProps {
   stargazers_count: number
 }
 
-export async function StarsCount({ stargazers_count }: StarsCountProps) {
+export function StarsCount({ stargazers_count }: StarsCountProps) {
   return (
     <span className="text-muted-foreground w-8 text-xs tabular-nums">
       {stargazers_count

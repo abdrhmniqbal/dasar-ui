@@ -3,7 +3,7 @@
 import { Link } from '@tanstack/react-router'
 
 import { siteConfig } from '@/lib/config'
-import { getSource } from '@/lib/source'
+import { type SourceType } from '@/lib/source'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { CommandMenu } from '@/components/blocks/command-menu'
@@ -16,12 +16,10 @@ import { Icons } from '@/components/icons'
 
 interface SiteHeaderProps {
   stargazers_count: number
+  pageTree: SourceType['pageTree']
 }
 
-export async function SiteHeader({ stargazers_count }: SiteHeaderProps) {
-  const source = await getSource()
-  const pageTree = source.pageTree
-
+export function SiteHeader({ stargazers_count, pageTree }: SiteHeaderProps) {
   return (
     <header className="bg-background sticky top-0 z-50 w-full">
       <div className="container-wrapper 3xl:fixed:px-0 px-6">

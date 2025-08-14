@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { Link, useLocation } from '@tanstack/react-router'
 import { IconMenu3 } from '@tabler/icons-react'
 
 import { cn } from '@/lib/utils'
@@ -61,6 +62,7 @@ export function DocsTableOfContents({
   className?: string
 }) {
   const [open, setOpen] = React.useState(false)
+  const { pathname } = useLocation()
   const itemIds = React.useMemo(
     () => toc.map((item) => item.url.replace('#', '')),
     [toc]
@@ -100,7 +102,12 @@ export function DocsTableOfContents({
               data-depth={item.depth}
               className="data-[depth=3]:pl-6 data-[depth=4]:pl-8"
             >
-              <a href={item.url}>{item.title}</a>
+              <Link
+                to={pathname}
+                hash={item.url.split('#')[1]}
+              >
+                {item.title}
+              </Link>
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
@@ -114,15 +121,16 @@ export function DocsTableOfContents({
         On This Page
       </p>
       {toc.map((item) => (
-        <a
+        <Link
           key={item.url}
-          href={item.url}
+          to={pathname}
+          hash={item.url.split('#')[1]}
           className="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
           data-active={item.url === `#${activeHeading}`}
           data-depth={item.depth}
         >
           {item.title}
-        </a>
+        </Link>
       ))}
     </div>
   )
