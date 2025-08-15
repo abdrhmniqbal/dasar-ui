@@ -1,6 +1,7 @@
 // import blocks from "@/registry/__blocks__.json"
 
 import { Link } from '@tanstack/react-router'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 import { siteConfig } from '@/lib/config'
 import { type SourceType } from '@/lib/source'
@@ -20,6 +21,7 @@ interface SiteHeaderProps {
 }
 
 export function SiteHeader({ stargazers_count, pageTree }: SiteHeaderProps) {
+  const isMobile = useIsMobile()
   return (
     <header className="bg-background sticky top-0 z-50 w-full">
       <div className="container-wrapper 3xl:fixed:px-0 px-6">
@@ -45,12 +47,14 @@ export function SiteHeader({ stargazers_count, pageTree }: SiteHeaderProps) {
             className="hidden lg:flex"
           />
           <div className="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
-            <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
-              <CommandMenu
-                tree={pageTree}
-                navItems={siteConfig.navItems}
-              />
-            </div>
+            {!isMobile && (
+              <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+                <CommandMenu
+                  tree={pageTree}
+                  navItems={siteConfig.navItems}
+                />
+              </div>
+            )}
             <Separator
               orientation="vertical"
               className="ml-2 hidden lg:block"
