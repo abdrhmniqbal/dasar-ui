@@ -1,15 +1,9 @@
-import { Outlet, createFileRoute, redirect } from '@tanstack/react-router'
+import { Outlet, createFileRoute } from '@tanstack/react-router'
 
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { DocsSidebar } from '@/components/blocks/docs-sidebar'
 
 export const Route = createFileRoute('/(app)/docs')({
-  beforeLoad: async ({ location }) => {
-    if (location.pathname == '/docs') {
-      //@ts-expect-error
-      throw redirect({ to: '/docs/installation' })
-    }
-  },
   loader: async ({ context }) => {
     return {
       pageTree: context.pageTree,
