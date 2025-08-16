@@ -1,4 +1,4 @@
-import { Index } from '@/registry/__index__'
+import { Index } from '@/registry/registry.index'
 
 import { ComponentPreviewTabs } from '@/components/blocks/component-preview-tabs'
 import { ComponentSource } from '@/components/blocks/component-source'

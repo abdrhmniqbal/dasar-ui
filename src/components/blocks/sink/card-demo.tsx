@@ -1,6 +1,6 @@
 import { Avatar } from '@/registry/minimal/ui/avatar'
 import { Badge } from '@/registry/minimal/ui/badge'
-import { Button } from '@/registry/minimal/ui/button'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { Card } from '@/registry/minimal/ui/card'
 import { Input } from '@/registry/minimal/ui/input'
 import { Label } from '@/registry/minimal/ui/label'

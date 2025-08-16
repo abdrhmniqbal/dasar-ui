@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import { tmpdir } from 'os'
 import path from 'path'
 import { createServerFn } from '@tanstack/react-start'
-import { Index } from '@/registry/__index__'
+import { Index } from '@/registry/registry.index'
 import { Project, ScriptKind } from 'ts-morph'
 import { z } from 'zod'
 
@@ -36,6 +36,7 @@ export const getRegistryItem = createServerFn({
     }
 
     let files: typeof result.data.files = []
+
     for (const file of item.files) {
       const content = await getFileContent(file)
       const relativePath = path.relative(process.cwd(), file.path)
@@ -148,20 +149,27 @@ function fixFilePaths(files: z.infer<typeof registryItemSchema>['files']) {
 }
 
 export function fixImport(content: string) {
-  const regex = /@\/(.+?)\/((?:.*?\/)?(?:components|ui|hooks|lib))\/([\w-]+)/g
+  const regex = /@\/registry\/[^/]+\/(components|ui|hooks|lib)\/(.+?)(?=['"])/g
 
-  const replacement = (match: string, type: string, component: string) => {
-    if (type.endsWith('components')) {
-      return `@/components/${component}`
-    } else if (type.endsWith('ui')) {
-      return `@/components/ui/${component}`
-    } else if (type.endsWith('hooks')) {
-      return `@/hooks/${component}`
-    } else if (type.endsWith('lib')) {
-      return `@/lib/${component}`
+  const replacement = (match: string, section: string, rest: string) => {
+    const parts = rest.split('/')
+    if (parts.length >= 2 && parts[0] === parts[1]) {
+      parts.splice(0, 1)
     }
+    rest = parts.join('/')
 
-    return match
+    switch (section) {
+      case 'components':
+        return `@/components/${rest}`
+      case 'ui':
+        return `@/components/ui/${rest}`
+      case 'hooks':
+        return `@/hooks/${rest}`
+      case 'lib':
+        return `@/lib/${rest}`
+      default:
+        return match
+    }
   }
 
   return content.replace(regex, replacement)

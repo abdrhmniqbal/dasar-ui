@@ -1,19 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { AccordionDemo } from '@/components/blocks/sink/accordion-demo'
-import { AlertDemo } from '@/components/blocks/sink/alert-demo'
-import { AspectRatioDemo } from '@/components/blocks/sink/aspect-ratio-demo'
-import { AvatarDemo } from '@/components/blocks/sink/avatar-demo'
-import { BadgeDemo } from '@/components/blocks/sink/badge-demo'
-import { ButtonDemo } from '@/components/blocks/sink/button-demo'
-import { CardDemo } from '@/components/blocks/sink/card-demo'
-import { CheckboxDemo } from '@/components/blocks/sink/checkbox-demo'
-import { ComponentWrapper } from '@/components/blocks/sink/component-wrapper'
-import { InputDemo } from '@/components/blocks/sink/input-demo'
-import { LabelDemo } from '@/components/blocks/sink/label-demo'
-import { RadioGroupDemo } from '@/components/blocks/sink/radio-group-demo'
-import { SpinnerDemo } from '@/components/blocks/sink/spinner-demo'
-
 export const Route = createFileRoute('/sink')({
   component: SinkPage,
 })
@@ -21,7 +7,7 @@ export const Route = createFileRoute('/sink')({
 function SinkPage() {
   return (
     <div className="@container grid flex-1 gap-4 p-4">
-      <ComponentWrapper name="Accordion">
+      {/* <ComponentWrapper name="Accordion">
         <AccordionDemo />
       </ComponentWrapper>
       <ComponentWrapper name="Alert">
@@ -56,7 +42,7 @@ function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="Spinner">
         <SpinnerDemo />
-      </ComponentWrapper>
+      </ComponentWrapper> */}
     </div>
   )
 }

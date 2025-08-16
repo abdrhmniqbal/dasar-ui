@@ -1,6 +1,6 @@
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import tailwindcss from '@tailwindcss/postcss'
-import react from '@vitejs/plugin-react-swc'
+import react from '@vitejs/plugin-react'
 import autoprefixer from 'autoprefixer'
 import mdx from 'fumadocs-mdx/vite'
 import { defineConfig } from 'vite'

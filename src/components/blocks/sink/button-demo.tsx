@@ -1,4 +1,4 @@
-import { Button } from '@/registry/minimal/ui/button'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { IconArrowRight, IconHeart, IconSend } from '@tabler/icons-react'
 
 export function ButtonDemo() {

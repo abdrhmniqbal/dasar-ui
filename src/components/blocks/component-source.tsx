@@ -1,5 +1,3 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
 import * as React from 'react'
 import { createServerFn } from '@tanstack/react-start'
 
@@ -15,13 +13,13 @@ const getFileContent = createServerFn({
 })
   .validator((src: string) => src)
   .handler(async ({ data: src }) => {
+    const fs = await import('node:fs/promises')
+    const path = await import('node:path')
     const content = await fs.readFile(path.join(process.cwd(), src), 'utf-8')
-    return {
-      content,
-    }
+    return { content }
   })
 
-export async function ComponentSource({
+export function ComponentSource({
   name,
   src,
   title,
@@ -35,55 +33,59 @@ export async function ComponentSource({
   language?: string
   collapsible?: boolean
 }) {
-  if (!name && !src) {
-    return null
-  }
+  const [code, setCode] = React.useState<string>()
+  const [highlighted, setHighlighted] = React.useState<string>()
 
-  let code: string | undefined
+  React.useEffect(() => {
+    let active = true
 
-  if (name) {
-    const item = await getRegistryItem({
-      data: name,
-    })
-    code = item?.files?.[0]?.content
-  }
+    async function load() {
+      let codeResult: string | undefined
 
-  if (src) {
-    const file = await getFileContent({
-      data: src,
-    })
+      if (name) {
+        const item = await getRegistryItem({ data: name })
+        codeResult = item?.files?.[0]?.content
+      }
 
-    code = file.content
-  }
+      if (src) {
+        const file = await getFileContent({ data: src })
+        codeResult = file.content
+      }
 
-  if (!code) {
-    return null
-  }
+      if (codeResult && active) {
+        setCode(codeResult)
+        const lang = language ?? title?.split('.').pop() ?? 'tsx'
+        const highlightedCode = await highlightCode(codeResult, lang)
+        if (active) setHighlighted(highlightedCode)
+      }
+    }
+
+    load()
+    return () => {
+      active = false
+    }
+  }, [name, src, title, language])
+
+  if (!code || !highlighted) return null
 
   const lang = language ?? title?.split('.').pop() ?? 'tsx'
-  const highlightedCode = await highlightCode(code, lang)
+
+  const content = (
+    <ComponentCode
+      code={code}
+      highlightedCode={highlighted}
+      language={lang}
+      title={title}
+    />
+  )
 
   if (!collapsible) {
-    return (
-      <div className={cn('relative', className)}>
-        <ComponentCode
-          code={code}
-          highlightedCode={highlightedCode}
-          language={lang}
-          title={title}
-        />
-      </div>
-    )
+    return <div className={cn('relative', className)}>{content}</div>
   }
 
   return (
     <CodeCollapsibleWrapper className={className}>
-      <ComponentCode
-        code={code}
-        highlightedCode={highlightedCode}
-        language={lang}
-        title={title}
-      />
+      {content}
     </CodeCollapsibleWrapper>
   )
 }
@@ -97,7 +99,7 @@ function ComponentCode({
   code: string
   highlightedCode: string
   language: string
-  title: string | undefined
+  title?: string
 }) {
   return (
     <figure

@@ -13,16 +13,20 @@ import { Button } from '@/components/ui/button'
 import { DocsCopyPage } from '@/components/blocks/docs-copy-page'
 
 export const Route = createFileRoute('/(app)/docs/$')({
-  ssr: false,
-  loader: async ({ params, context }) => {
+  beforeLoad: async ({ params }) => {
     const data = await getPageBySlug({ data: params._splat?.split('/') ?? [] })
-    const neighbours = findNeighbour(context.pageTree, data.data.url)
+    return {
+      data,
+    }
+  },
+  loader: async ({ context }) => {
+    const neighbours = findNeighbour(context.pageTree, context.data.data.url)
 
-    await tocLoader.preload(data.path)
-    await mdxLoader.preload(data.path)
+    await tocLoader.preload(context.data.path)
+    await mdxLoader.preload(context.data.path)
 
     return {
-      ...data,
+      ...context.data,
       neighbours,
     }
   },
@@ -30,7 +34,7 @@ export const Route = createFileRoute('/(app)/docs/$')({
     return {
       meta: [
         ...seo({
-          title: loaderData?.data.title ?? 'Docs',
+          title: `${loaderData?.data.title ?? 'Docs'} | Dasar UI`,
           description:
             loaderData?.data.description ?? 'Documentation for Dasar UI',
         }),

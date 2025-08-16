@@ -1,5 +1,5 @@
 import { Alert } from '@/registry/minimal/ui/alert'
-import { Button } from '@/registry/minimal/ui/button'
+import { Button } from '@/registry/minimal/ui/button/button'
 import {
   IconBookmarkFilled,
   IconCircleCheck,
