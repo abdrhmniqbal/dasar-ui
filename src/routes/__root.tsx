@@ -7,8 +7,7 @@ import {
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { LayoutProvider } from '@/hooks/use-layout'
 
-import { getThemeServerFn } from '@/lib/theme'
-import { ThemeProvider, useTheme } from '@/components/theme-provider'
+import { ThemeProvider } from '@/components/theme-provider'
 import appCss from '@/styles/globals.css?url'
 
 export const Route = createRootRoute({
@@ -32,14 +31,12 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  loader: () => getThemeServerFn(),
   shellComponent: RootComponent,
 })
 
 function RootComponent() {
-  const theme = Route.useLoaderData()
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <LayoutProvider>
         <RootDocument>
           <Outlet />
@@ -50,11 +47,9 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-  const { theme } = useTheme()
   return (
     <html
       lang="en"
-      className={theme}
       suppressHydrationWarning
     >
       <head>
