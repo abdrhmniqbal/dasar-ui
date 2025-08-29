@@ -2,10 +2,10 @@
 
 import { Link } from '@tanstack/react-router'
 import { useIsMobile } from '@/hooks/use-mobile'
+import { Button } from '@/registry/minimal/ui/button/button'
 
 import { siteConfig } from '@/lib/config'
 import { type SourceType } from '@/lib/source'
-import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { CommandMenu } from '@/components/blocks/command-menu'
 import { GitHubLink } from '@/components/blocks/github-link'
@@ -32,10 +32,10 @@ export function SiteHeader({ stargazers_count, pageTree }: SiteHeaderProps) {
             className="flex lg:hidden"
           />
           <Button
-            asChild
-            variant="ghost"
-            size="icon"
+            appearance="ghost"
             className="hidden size-8 lg:flex"
+            iconOnly
+            asChild
           >
             <Link to="/">
               <Icons.logo className="size-5" />

@@ -5,13 +5,13 @@ import { useNavigate } from '@tanstack/react-router'
 import { useConfig } from '@/hooks/use-config'
 import { useIsMac } from '@/hooks/use-is-mac'
 import { useMutationObserver } from '@/hooks/use-mutation-observer'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { type DialogProps } from '@radix-ui/react-dialog'
 import { IconArrowRight } from '@tabler/icons-react'
 import { CornerDownLeftIcon, SquareDashedIcon } from 'lucide-react'
 
 import type { SourceType } from '@/lib/source'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 import {
   Command,
   CommandEmpty,
@@ -133,7 +133,7 @@ export function CommandMenu({
     >
       <DialogTrigger asChild>
         <Button
-          variant="secondary"
+          color="secondary"
           className={cn(
             'bg-surface text-surface-foreground/60 dark:bg-card relative h-8 w-full justify-start pl-2.5 font-normal shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64'
           )}

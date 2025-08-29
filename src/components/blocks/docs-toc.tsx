@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { IconMenu3 } from '@tabler/icons-react'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -81,7 +81,7 @@ export function DocsTableOfContents({
       >
         <DropdownMenuTrigger asChild>
           <Button
-            variant="outline"
+            appearance="outline"
             size="sm"
             className={cn('h-8 md:h-7', className)}
           >

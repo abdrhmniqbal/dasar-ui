@@ -1,10 +1,10 @@
 'use client'
 
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { IconCheck, IconChevronDown, IconCopy } from '@tabler/icons-react'
 
 import { siteConfig } from '@/lib/config'
-import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -99,7 +99,7 @@ export function DocsCopyPage({ page, path }: { page: string; path: string }) {
 
   const trigger = (
     <Button
-      variant="secondary"
+      color="secondary"
       size="sm"
       className="peer -ml-0.5 size-8 shadow-none md:size-7 md:text-[0.8rem]"
     >
@@ -112,7 +112,7 @@ export function DocsCopyPage({ page, path }: { page: string; path: string }) {
       <div className="bg-secondary group/buttons relative flex rounded-lg *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10">
         <PopoverAnchor />
         <Button
-          variant="secondary"
+          color="secondary"
           size="sm"
           className="h-8 shadow-none md:h-7 md:text-[0.8rem]"
           onClick={() => copyToClipboard(page)}
@@ -157,7 +157,7 @@ export function DocsCopyPage({ page, path }: { page: string; path: string }) {
         >
           {Object.entries(menuItems).map(([key, value]) => (
             <Button
-              variant="ghost"
+              appearance="ghost"
               size="lg"
               asChild
               key={key}

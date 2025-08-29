@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from '@tanstack/react-router'
+import { Button } from '@/registry/minimal/ui/button/button'
 
 import { cn } from '@/lib/utils'
 import {
@@ -10,7 +11,6 @@ import {
 } from '@/components/ui/accordion'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
-import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Callout } from '@/components/blocks/callout'
 import { CodeBlockCommand } from '@/components/blocks/code-block-command'

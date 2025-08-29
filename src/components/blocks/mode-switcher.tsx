@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react'
+import { Button } from '@/registry/minimal/ui/button/button'
 
-import { Button } from '@/components/ui/button'
 import { useTheme } from '@/components/theme-provider'
 
 export function ModeSwitcher() {
@@ -14,9 +14,8 @@ export function ModeSwitcher() {
 
   return (
     <Button
-      variant="ghost"
-      size="icon"
-      className="group/toggle extend-touch-target size-8"
+      appearance="ghost"
+      iconOnly
       onClick={toggleTheme}
       title="Toggle theme"
     >

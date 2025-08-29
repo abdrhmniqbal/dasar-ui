@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Link } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
+import { Button } from '@/registry/minimal/ui/button/button'
 
 import { siteConfig } from '@/lib/config'
-import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Icons } from '@/components/icons'
 
@@ -16,7 +16,7 @@ export function GitHubLink({ stargazers_count }: GitHubLinkProps) {
     <Button
       asChild
       size="sm"
-      variant="ghost"
+      appearance="ghost"
       className="h-8 shadow-none"
     >
       <Link

@@ -2,19 +2,19 @@
 
 import * as React from 'react'
 import { useLayout } from '@/hooks/use-layout'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { GalleryHorizontalIcon } from 'lucide-react'
 
 import { trackEvent } from '@/lib/events'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 
 export function SiteConfig({ className }: React.ComponentProps<typeof Button>) {
   const { layout, setLayout } = useLayout()
 
   return (
     <Button
-      variant="ghost"
-      size="icon"
+      appearance="ghost"
+      iconOnly
       onClick={() => {
         const newLayout = layout === 'fixed' ? 'full' : 'fixed'
         setLayout(newLayout)

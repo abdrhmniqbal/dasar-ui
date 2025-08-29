@@ -216,11 +216,16 @@
   @apply relative;
 
   &:before {
-    @apply text-muted-foreground right-0 mr-2 hidden size-7 items-center justify-center rounded-full text-center -indent-px font-mono text-sm font-medium md:absolute;
+    @apply text-muted-foreground hidden md:flex bg-muted left-0 ml-[-48px] -mt-0.5  size-7 items-center justify-center leading-loose rounded-full text-center -indent-px font-mono text-sm font-medium md:absolute;
     content: counter(step);
   }
 }
 
+@utility extend-touch-target {
+  @media (pointer: coarse) {
+    @apply relative touch-manipulation after:absolute after:-inset-2;
+  }
+}
 @utility extend-touch-target {
   @media (pointer: coarse) {
     @apply relative touch-manipulation after:absolute after:-inset-2;

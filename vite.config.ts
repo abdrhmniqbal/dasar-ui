@@ -33,6 +33,9 @@ const config = defineConfig({
     }),
     tanstackStart({
       customViteReactPlugin: true,
+			prerender: {
+        enabled: true,
+      },
     }),
     react(),
   ],

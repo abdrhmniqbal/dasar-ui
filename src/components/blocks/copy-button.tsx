@@ -1,11 +1,11 @@
 'use client'
 
 import * as React from 'react'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { CheckIcon, ClipboardIcon } from 'lucide-react'
 
 import { Event, trackEvent } from '@/lib/events'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
@@ -22,7 +22,7 @@ export function copyToClipboardWithMeta(value: string, event?: Event) {
 export function CopyButton({
   value,
   className,
-  variant = 'ghost',
+  appearance = 'ghost',
   event,
   ...props
 }: React.ComponentProps<typeof Button> & {
@@ -43,10 +43,11 @@ export function CopyButton({
       <TooltipTrigger asChild>
         <Button
           data-slot="copy-button"
-          size="icon"
-          variant={variant}
+          iconOnly
+          size="xs"
+          appearance={appearance}
           className={cn(
-            'bg-code absolute top-3 right-2 z-10 size-7 hover:opacity-100 focus-visible:opacity-100',
+            'bg-code absolute top-2 right-2 z-10 hover:opacity-100 focus-visible:opacity-100',
             className
           )}
           onClick={() => {

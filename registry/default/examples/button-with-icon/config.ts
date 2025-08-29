@@ -1,13 +1,12 @@
 import type { RegistryItem } from '@/lib/schema'
 
 const config: RegistryItem = {
-  name: 'button-demo',
-  title: 'Button Demo',
-  description: 'An interactive element used to trigger actions.',
+  name: 'button-with-icon',
+  title: 'Button With Icon',
   type: 'registry:example',
   files: [
     {
-      path: 'registry/default/example/button-demo/button-demo.tsx',
+      path: 'registry/default/examples/button-with-icon/button-with-icon.tsx',
       type: 'registry:example',
     },
   ],

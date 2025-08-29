@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 import { Link, useNavigate, type LinkProps } from '@tanstack/react-router'
+import { Button } from '@/registry/minimal/ui/button/button'
 
 import { type SourceType } from '@/lib/source'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 import {
   Popover,
   PopoverContent,
@@ -30,7 +30,7 @@ export function MobileNav({
     >
       <PopoverTrigger asChild>
         <Button
-          variant="ghost"
+          appearance="ghost"
           className={cn(
             'extend-touch-target h-8 touch-manipulation items-center justify-start gap-2.5 !p-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent dark:hover:bg-transparent',
             className

@@ -1,9 +1,9 @@
 'use client'
 
 import { Link, useLocation } from '@tanstack/react-router'
+import { Button } from '@/registry/minimal/ui/button/button'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 
 export function MainNav({
   items,
@@ -22,7 +22,7 @@ export function MainNav({
       {items.map((item) => (
         <Button
           key={item.href}
-          variant="ghost"
+          appearance="ghost"
           asChild
           size="sm"
         >

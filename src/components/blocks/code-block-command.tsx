@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 import { useConfig } from '@/hooks/use-config'
+import { Button } from '@/registry/minimal/ui/button/button'
 import { CheckIcon, ClipboardIcon, TerminalIcon } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
   Tooltip,
@@ -116,9 +116,10 @@ export function CodeBlockCommand({
         <TooltipTrigger asChild>
           <Button
             data-slot="copy-button"
-            size="icon"
-            variant="ghost"
-            className="absolute top-2 right-2 z-10 size-7 opacity-70 hover:opacity-100 focus-visible:opacity-100"
+            appearance="ghost"
+            size="xs"
+            className="absolute top-2 right-2 z-10 opacity-70 hover:opacity-100 focus-visible:opacity-100"
+            iconOnly
             onClick={copyCommand}
           >
             <span className="sr-only">Copy</span>

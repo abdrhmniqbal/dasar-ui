@@ -11,3 +11,128 @@ component: true
 />
 
 ## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://dasar-ui.vercel.app/r/styles/minimal/button.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @ark-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="button"
+  title="components/ui/button.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Button } from '@/components/ui/button'
+```
+
+```tsx
+<Button>Button</Button>
+```
+
+## Link
+
+You can use the `asChild` prop to make another component look like a button. Here's an example of a link that looks like a button.
+
+```tsx showLineNumbers
+import { Link } from '@tanstack/react-router'
+
+import { Button } from '@/components/ui/button'
+
+export function LinkAsButton() {
+  return (
+    <Button asChild>
+      <Link to="/login">Login</Link>
+    </Button>
+  )
+}
+```
+
+## Examples
+
+### Button Sizes
+
+<ComponentPreview
+  name="button-sizes"
+  description="A sizes of button"
+/>
+
+### Solid Button
+
+<ComponentPreview
+  name="button-solid"
+  description="A solid button"
+/>
+
+### Outline Button
+
+<ComponentPreview
+  name="button-outline"
+  description="An outline button"
+/>
+
+### Soft Button
+
+<ComponentPreview
+  name="button-soft"
+  description="A soft button"
+/>
+
+### Ghost Button
+
+<ComponentPreview
+  name="button-ghost"
+  description="A ghost button"
+/>
+
+### Button with Icon
+
+<ComponentPreview
+  name="button-with-icon"
+  description="A button with icon"
+/>
+
+### Icon Only
+
+<ComponentPreview
+  name="button-icon"
+  description="An icon button"
+/>
+
+### Loading Button
+
+<ComponentPreview
+  name="button-loading"
+  description="A loading button"
+/>

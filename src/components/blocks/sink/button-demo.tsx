@@ -58,7 +58,6 @@ export function ButtonDemo() {
         <Button
           size="xs"
           variant="outline"
-          loading
         >
           Please wait
         </Button>
@@ -118,7 +117,6 @@ export function ButtonDemo() {
           disabled
           size="sm"
           variant="outline"
-          loading
         >
           Please wait
         </Button>
@@ -145,7 +143,6 @@ export function ButtonDemo() {
         <Button
           disabled
           variant="outline"
-          loading
         >
           Please wait
         </Button>
@@ -205,7 +202,6 @@ export function ButtonDemo() {
           disabled
           size="lg"
           variant="outline"
-          loading
         >
           Please wait
         </Button>
@@ -265,7 +261,6 @@ export function ButtonDemo() {
           disabled
           size="xl"
           variant="outline"
-          loading
         >
           Please wait
         </Button>

@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { Button } from '@/registry/minimal/ui/button/button'
 import {
   IconArrowLeft,
   IconArrowRight,
@@ -9,8 +10,6 @@ import { findNeighbour } from 'fumadocs-core/server'
 import { seo } from '@/lib/seo'
 import { getPageBySlug, mdxLoader, tocLoader } from '@/lib/source'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { DocsCopyPage } from '@/components/blocks/docs-copy-page'
 
 export const Route = createFileRoute('/(app)/docs/$')({
   beforeLoad: async ({ params }) => {
@@ -66,15 +65,11 @@ function DocPage() {
                   {data.title}
                 </h1>
                 <div className="docs-nav bg-background/80 border-border/50 fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 border-t px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
-                  <DocsCopyPage
-                    page={JSON.stringify(data.structuredData)}
-                    path={path}
-                  />
                   {neighbours.previous && (
                     <Button
-                      variant="secondary"
-                      size="icon"
-                      className="extend-touch-target ml-auto size-8 shadow-none md:size-7"
+                      color="secondary"
+                      size="sm"
+                      iconOnly
                       asChild
                     >
                       <Link to={neighbours.previous.url}>
@@ -85,9 +80,9 @@ function DocPage() {
                   )}
                   {neighbours.next && (
                     <Button
-                      variant="secondary"
-                      size="icon"
-                      className="extend-touch-target size-8 shadow-none md:size-7"
+                      color="secondary"
+                      size="sm"
+                      iconOnly
                       asChild
                     >
                       <Link to={neighbours.next.url}>
@@ -144,7 +139,7 @@ function DocPage() {
         <div className="mx-auto hidden h-16 w-full max-w-2xl items-center gap-2 px-4 sm:flex md:px-0">
           {neighbours.previous && (
             <Button
-              variant="secondary"
+              color="secondary"
               size="sm"
               asChild
               className="shadow-none"
@@ -156,7 +151,7 @@ function DocPage() {
           )}
           {neighbours.next && (
             <Button
-              variant="secondary"
+              color="secondary"
               size="sm"
               className="ml-auto shadow-none"
               asChild

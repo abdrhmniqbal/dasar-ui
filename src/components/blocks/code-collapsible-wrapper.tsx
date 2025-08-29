@@ -1,9 +1,9 @@
 'use client'
 
 import * as React from 'react'
+import { Button } from '@/registry/minimal/ui/button/button'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
 import {
   Collapsible,
   CollapsibleContent,
@@ -28,7 +28,7 @@ export function CodeCollapsibleWrapper({
       <CollapsibleTrigger asChild>
         <div className="absolute top-1.5 right-9 z-10 flex items-center">
           <Button
-            variant="ghost"
+            appearance="ghost"
             size="sm"
             className="text-muted-foreground h-7 rounded-md px-2"
           >

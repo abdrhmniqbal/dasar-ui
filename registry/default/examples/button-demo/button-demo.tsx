@@ -1,5 +1,5 @@
 import { Button } from '@/registry/minimal/ui/button/button'
 
-export function ButtonDemo() {
+export function Page() {
   return <Button>Click me</Button>
 }

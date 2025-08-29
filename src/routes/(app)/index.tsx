@@ -1,8 +1,8 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { Button } from '@/registry/minimal/ui/button/button'
 import Balancer from 'react-wrap-balancer'
 
 import { siteConfig } from '@/lib/config'
-import { Button } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
 
 export const Route = createFileRoute('/(app)/')({
@@ -17,7 +17,7 @@ function App() {
     >
       <section className="flex-1 flex flex-col items-center justify-center gap-4 ">
         <Button
-          variant="outline"
+          appearance="outline"
           size="sm"
           className="flex gap-2"
           asChild
@@ -41,14 +41,14 @@ function App() {
         </span>
         <div className="animate-fade-up flex items-center gap-4">
           <Button
-            variant="ghost"
+            appearance="ghost"
             asChild
           >
             <Link to="/">Get Started</Link>
           </Button>
           <Button
             className="gap-2"
-            variant="outline"
+            appearance="outline"
             asChild
           >
             <a
